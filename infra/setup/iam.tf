@@ -1,5 +1,5 @@
 ################################################
-# Create IAM user and policies for CICD account #
+# Create IAM user and policies for CICD user account #
 ################################################
 
 resource "aws_iam_user" "cd" {
