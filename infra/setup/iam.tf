@@ -1,5 +1,5 @@
 ################################################
-# Create IAM user and policies for CICD user account #
+# Create IAM user and policies for CICD #
 ################################################
 
 resource "aws_iam_user" "cd" {
@@ -93,6 +93,10 @@ resource "aws_iam_policy" "ecr" {
   policy      = data.aws_iam_policy_document.ecr.json
 }
 
+
+#####################################################################################
+# Attach/Assign the ECR policy
+#####################################################################################
 resource "aws_iam_user_policy_attachment" "ecr" {
   user       = aws_iam_user.cd.name
   policy_arn = aws_iam_policy.ecr.arn
